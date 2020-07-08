@@ -15,11 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag csmanuel928/odoo:$(date +%s)
+      run: docker build . --file Dockerfile --tag csmanuel928/odoo
     - name: Docker Login Step
       env: 
         DOCKER_USER: ${{secrets.DOCKER_USER}}
         DOCKER_PASS: ${{secrets.DOCKER_PASS}}
       run: docker login -u $DOCKER_USER -p $DOCKER_PASS
     - name: Push image to DockerHub
-      run: docker push csmanuel928/odoo:$(date +%s)
+      run: docker push csmanuel928/odoo
