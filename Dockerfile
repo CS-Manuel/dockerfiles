@@ -6,4 +6,5 @@ RUN sed -i 's/; list_db=True/list_db=False/g' /etc/odoo/odoo.conf
 COPY /addons_ohrm/ /mnt/extra-addons
 RUN python3 -m pip install pandas
 USER odoo
+#last: updated: 01/03/21
 #then go to the browser and activate developer mode and then update the app list
